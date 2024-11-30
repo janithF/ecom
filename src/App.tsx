@@ -22,19 +22,18 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
-    <Grid templateAreas={{ base: `"nav" "main"`, lg: `"aside main"` }} templateColumns={{ base: "1fr", lg: "300px 1fr" }}>
-      <Show below="lg">
-        <GridItem area={"nav"} h={"5vh"} bg={"gray.100"} p={5}>
-          <Navbar />
+    <Grid templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }} height={"100vh"} templateColumns={{ base: "1fr", lg: "300px 1fr" }} gridTemplateRows={"50px 1fr"} padding={"5px"}>
+      <Show>
+        <GridItem area={"nav"} >
+          <Navbar onSearch={(searchText: string) => setProductQuery({ ...productQuery, searchText })} />
         </GridItem>
       </Show>
       <Show above="lg">
-        <GridItem area={"aside"} bg={"gray.100"} p={5} overflowY={"auto"} h={"100vh"}>
+        <GridItem area={"aside"} bg={"blue.900"} p={"5px"} overflowY={"hidden"} borderRadius={"20px"}>
           <Categories onSelectCategory={(category) => setSelectedCategory(category)} selectedCategory={selectedCategory} />
         </GridItem>
       </Show>
-      <GridItem area={"main"} p={5} h={{ base: "95vh", lg: "100vh" }} overflowY={"auto"}>
-        {selectedCategory == defaultCategory && <SearchInput onsearch={(searchText) => setProductQuery({ ...productQuery, searchText })} />}
+      <GridItem area={"main"} p={5} overflowY={"auto"}>
         <Heading as="h3" size="lg" mb="3">
           {selectedCategory.name}
         </Heading>

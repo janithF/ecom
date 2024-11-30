@@ -18,7 +18,7 @@ const SearchInput = ({ onsearch }: Props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <InputGroup mb="5">
+      <InputGroup>
         <InputLeftElement pointerEvents="none">
           <Icon as={BsSearch} />
         </InputLeftElement>
