@@ -1,4 +1,4 @@
-import { Box, Button, Heading, List, ListItem, Text } from "@chakra-ui/react";
+import { Box, Button, List, ListItem, Text } from "@chakra-ui/react";
 import useCategories, { Category } from "../hooks/useCategories";
 import Error from "./Error";
 
@@ -18,18 +18,16 @@ const Categories = ({ onSelectCategory, selectedCategory }: Props) => {
 
   return (
     <Box height={"80%"} overflowY={"hidden"}>
-      <Heading size="md" my="3">
-        Categories
-      </Heading>
       {error && <Error message={error} />}
       {isLoading && <Text color="gray.400">Loading...</Text>}
-      <List height={"90%"} overflowY={"auto"}>
+      <List height={"60vh"} overflowY={"auto"}>
         {!error && !isLoading && categories.map((category) => {
           return (
             <ListItem key={category.slug} paddingY={2}>
               <Button
                 variant="link"
                 whiteSpace={"normal"}
+                textColor={"white"}
                 onClick={() => selectCategory(category)}
                 fontWeight={selectedCategory.slug === category.slug ? "bold" : "normal"}
               >

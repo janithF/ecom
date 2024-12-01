@@ -1,5 +1,5 @@
 import useProducts, { Product } from "../hooks/useProducts";
-import { Flex, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 import Error from "./Error";
 import { ProductQuery } from "../App";
@@ -29,13 +29,13 @@ const ProductGrid = ({ category, productQuery, onSelectProduct }: Props) => {
   }
 
   return (
-    <>
-      <SimpleGrid spacing={6} columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}>
+    <Box overflowY={"auto"} height={"calc(100vh - 140px)"} paddingRight={"10px"}>
+      <SimpleGrid spacing={6} columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }} gap={"10px"}>
         {products.map((product) => {
           return <ProductCard key={product.id} product={product} onViewProduct={onSelectProduct} />;
         })}
       </SimpleGrid>
-    </>
+    </Box>
   );
 };
 

@@ -9,7 +9,7 @@ interface Props {
 const ProductCard = ({ product, onViewProduct }: Props) => {
   const { id, title, price, rating, brand, thumbnail } = product;
   return (
-    <Card maxW={"sm"} overflow="hidden" mb="3">
+    <Card maxW={"sm"}>
       <CardBody>
         <Stack mt="6" spacing="3">
           <Image src={thumbnail} alt={title} w={150} h={100} alignSelf="center" />

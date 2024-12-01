@@ -21,7 +21,7 @@ const SortMenu = ({ onSelectSort, sort }: Props) => {
   return (
     <Box my="5">
       <Menu>
-        <MenuButton as={Button} colorScheme="blue" rightIcon={<FaChevronDown />}>
+        <MenuButton as={Button} colorScheme="blue" rightIcon={<FaChevronDown />} size={"sm"}>
           {sort?.title || "Sort By"}
         </MenuButton>
         <MenuList>

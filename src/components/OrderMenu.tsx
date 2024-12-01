@@ -20,7 +20,7 @@ const OrderMenu = ({ onSelectOrder, order }: Props) => {
   return (
     <Box my="5">
       <Menu>
-        <MenuButton as={Button} colorScheme="blue" rightIcon={<FaChevronDown />}>
+        <MenuButton as={Button} colorScheme="blue" rightIcon={<FaChevronDown />} size={"sm"}>
           {order?.title || "Order By"}
         </MenuButton>
         <MenuList>
