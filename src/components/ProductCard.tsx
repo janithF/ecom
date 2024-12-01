@@ -1,5 +1,7 @@
 import { Product } from "../hooks/useProducts";
-import { Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Image, Stack, Text, Tooltip } from "@chakra-ui/react";
+import getCroppedWord from "../services/word-crop";
+import Rating from "./Rating";
 
 interface Props {
   onViewProduct: (product: Product) => void;
@@ -10,17 +12,19 @@ const ProductCard = ({ product, onViewProduct }: Props) => {
   const { id, title, price, rating, brand, thumbnail } = product;
   return (
     <Card maxW={"sm"}>
-      <CardBody>
-        <Stack mt="6" spacing="3">
+      <CardBody padding={"10px"}>
+        <Stack mt="2" spacing="1">
           <Image src={thumbnail} alt={title} w={150} h={100} alignSelf="center" />
-          <Heading size="md">{title}</Heading>
-          <Text color="blue.600" fontSize="2xl">
+          <Tooltip label={title} placement="top-start">
+            <Heading size="sm">{title.length > 25 ? `${getCroppedWord(title, 20)}...` : title}</Heading>
+          </Tooltip>
+          <Rating rating={rating}></Rating>
+          <Text color="blue.600" fontSize="xl">
             ${price}
           </Text>
-          <Text>Rating: {rating}</Text>
         </Stack>
       </CardBody>
-      <CardFooter>
+      <CardFooter padding={"3px 10px 10px"}>
         <Button onClick={() => onViewProduct(product)} variant="outline" colorScheme="blue" size="sm" w="100%">
           View Product
         </Button>
