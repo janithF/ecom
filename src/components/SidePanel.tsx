@@ -15,12 +15,12 @@ const SidePanel = ({ onSelectCategory, selectedCategory }: Props) => {
       <AccordionItem>
         <Text>
           <AccordionButton>
-            <Box as="span" flex="1" textAlign="left" color={"white"}>
-              <HStack>
+            <Box as="span" flex="1" textAlign="left">
+              <HStack color="brand.300" fontWeight={"bold"}>
                 <FaLayerGroup /> <Text>Categories</Text>
               </HStack>
             </Box>
-            <AccordionIcon color={"white"} />
+            <AccordionIcon />
           </AccordionButton>
         </Text>
         <AccordionPanel pb={4} padding={"5px 5px 5px 40px"}>
@@ -31,12 +31,12 @@ const SidePanel = ({ onSelectCategory, selectedCategory }: Props) => {
       <AccordionItem>
         <Text>
           <AccordionButton>
-            <Box as="span" flex="1" textAlign="left" color={"white"}>
-              <HStack>
+            <Box as="span" flex="1" textAlign="left">
+              <HStack color="brand.300" fontWeight={"bold"}>
                 <FaFilter /> <Text>Filter</Text>
               </HStack>
             </Box>
-            <AccordionIcon color={"white"} />
+            <AccordionIcon />
           </AccordionButton>
         </Text>
         <AccordionPanel pb={4}>

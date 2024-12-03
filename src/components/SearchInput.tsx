@@ -20,14 +20,15 @@ const SearchInput = ({ onsearch }: Props) => {
     <form onSubmit={submitHandler}>
       <InputGroup>
         <InputLeftElement pointerEvents="none">
-          <Icon as={BsSearch} />
+          <Icon as={BsSearch} color="white" />
         </InputLeftElement>
         <Input
           type="search"
           ref={searchRef}
           placeholder="Search Products..."
           borderRadius={20}
-          variant={"filled"}
+          variant={"outline"}
+          color={"white"}
         />
       </InputGroup>
     </form>

@@ -27,9 +27,9 @@ const Categories = ({ onSelectCategory, selectedCategory }: Props) => {
               <Button
                 variant="link"
                 whiteSpace={"normal"}
-                textColor={"white"}
                 onClick={() => selectCategory(category)}
                 fontWeight={selectedCategory.slug === category.slug ? "bold" : "normal"}
+                color={selectedCategory.slug === category.slug ? "brand.200" : "black"}
               >
                 {category.name}
               </Button>

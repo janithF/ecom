@@ -29,7 +29,8 @@ const ProductGrid = ({ category, productQuery, onSelectProduct }: Props) => {
   }
 
   return (
-    <Box overflowY={"auto"} height={"calc(100vh - 140px)"} paddingRight={"10px"}>
+    <Box overflowY={"auto"} height={"calc(100vh - 123px)"} padding={"0 10px 2px 0"}>
+      <Text marginBottom={"10px"}>Showing <Text fontWeight={"bold"} as={"span"}>{products.length}</Text> products</Text>
       <SimpleGrid spacing={6} columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }} gap={"10px"}>
         {products.map((product) => {
           return <ProductCard key={product.id} product={product} onViewProduct={onSelectProduct} />;

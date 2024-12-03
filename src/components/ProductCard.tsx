@@ -19,13 +19,13 @@ const ProductCard = ({ product, onViewProduct }: Props) => {
             <Heading size="sm">{title.length > 25 ? `${getCroppedWord(title, 20)}...` : title}</Heading>
           </Tooltip>
           <Rating rating={rating}></Rating>
-          <Text color="blue.600" fontSize="xl">
+          <Text color="brand.200" fontSize="xl">
             ${price}
           </Text>
         </Stack>
       </CardBody>
       <CardFooter padding={"3px 10px 10px"}>
-        <Button onClick={() => onViewProduct(product)} variant="outline" colorScheme="blue" size="sm" w="100%">
+        <Button onClick={() => onViewProduct(product)} variant="outline" _hover={{bg:'brand.200',color:'white'}} borderRadius="16px" size="sm" w="100%">
           View Product
         </Button>
       </CardFooter>

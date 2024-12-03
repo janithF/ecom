@@ -20,8 +20,8 @@ const OrderMenu = ({ onSelectOrder, order }: Props) => {
   return (
     <Box my="5">
       <Menu>
-        <MenuButton as={Button} colorScheme="blue" rightIcon={<FaChevronDown />} size={"sm"}>
-          {order?.title || "Order By"}
+        <MenuButton as={Button} variant={"outline"} borderRadius={"20px"} rightIcon={<FaChevronDown />} size={"sm"}>
+          Order By {order?.title}
         </MenuButton>
         <MenuList>
           {sortFields.map((itm) => (
